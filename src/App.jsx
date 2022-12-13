@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import Pile from './components/Pile'
 import Player from './components/Player'
-import cardsData from './data/testCards'
+import useSetUp from './hooks/useSetUp'
 // import cardsData from './data/cardsData'
 
 function App () {
-  const INIT_CARDS_PER_USER = 2
   // const PLAYERS_QUANTITY = 2
-  const [playerCards, setPlayerCards] = useState(cardsData.slice(0, INIT_CARDS_PER_USER))
-  const [cards, setCards] = useState(cardsData.slice(INIT_CARDS_PER_USER, -1))
-  const [discard, setDiscard] = useState(cardsData.at(-1))
+  const initial = useSetUp()
+  const [cards, setCards] = useState(initial.cards)
+  const [playerCards, setPlayerCards] = useState(initial.playerCards)
+  const [discard, setDiscard] = useState(initial.discard)
   const [selectedIndex, setSelectedIndex] = useState(null)
+  // const [isGameOver, setIsGameOver] = initial.gameOver
 
   const draw = () => {
     const cardToDraw = cards.at(-1)

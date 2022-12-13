@@ -1,5 +1,10 @@
 export default [
   {
+    symbol: '1',
+    color: 'red',
+    id: '1r'
+  },
+  {
     symbol: '2',
     color: 'blue',
     id: '2b'
@@ -35,10 +40,5 @@ export default [
     color: 'black',
     id: '+41',
     substitute: null
-  },
-  {
-    symbol: '1',
-    color: 'red',
-    id: '1r'
   }
 ]
